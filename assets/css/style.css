@@ -1,0 +1,129 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    padding: 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 300px;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.visualization-area {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.gantt-chart {
+    display: flex;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.process-block {
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid #fff;
+}
+
+.metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.metrics-table th, .metrics-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.metrics-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group label {
+    min-width: 120px;
+}
+
+#process-input-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#process-input-table th, 
+#process-input-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#process-input-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+#process-input-table input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#add-processes-from-table-btn, #generate-table-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#add-processes-from-table-btn:hover, #generate-table-btn:hover {
+    background-color: #0056b3;
+}

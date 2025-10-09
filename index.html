@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>CPU Scheduling Simulator</h1>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div id="process-input-container">
+                <h2>Define Processes</h2>
+                <div class="input-group">
+                    <label for="num-processes">Number of Processes:</label>
+                    <input type="number" id="num-processes" value="3" min="1">
+                    <button id="generate-table-btn">Generate Table</button>
+                </div>
+                <div id="process-table-wrapper">
+                    </div>
+                <button id="add-processes-from-table-btn" style="margin-top: 10px;">Load Processes</button>
+            </div>
+            
+            <div class="controls">
+                <h2>Controls</h2>
+                <div class="algorithm-selection">
+                    <label for="algorithm-select">Select Algorithm:</label>
+                    <select id="algorithm-select">
+                        <option value="fcfs">First-Come, First-Served</option>
+                        <option value="sjn">Shortest Job Next (Non-preemptive)</option>
+                        <option value="srtf">Shortest Remaining Time First (Preemptive)</option>
+                        <option value="roundRobin">Round Robin</option>
+                    </select>
+                </div>
+                <div id="quantum-time-group" class="input-group" style="display: none; margin-top: 10px;">
+                    <label for="quantum-time">Quantum Time:</label>
+                    <input type="number" id="quantum-time" value="2" min="1">
+                </div>
+                <button id="start-simulation-btn">Start Simulation</button>
+                <button id="reset-simulation-btn">Reset</button>
+            </div>
+
+            <div id="metrics-panel">
+                <h2>Summary Metrics</h2>
+                <div class="metric-item">
+                    <span>Current Time:</span> <span id="current-time">0</span>
+                </div>
+                <div class="metric-item">
+                    <span>Average Waiting Time:</span> <span id="avg-waiting-time">0</span>
+                </div>
+                <div class="metric-item">
+                    <span>Average Turnaround Time:</span> <span id="avg-turnaround-time">0</span>
+                </div>
+            </div>
+        </aside>
+
+        <section id="visualization" class="visualization-area">
+            <h2>Timeline & CPU</h2>
+            <div class="cpu-timeline">
+                <div class="cpu">CPU</div>
+                <div id="gantt-chart" class="gantt-chart"></div>
+            </div>
+            <h3>Ready Queue</h3>
+            <div id="ready-queue" class="process-queue"></div>
+            <h3>Completed Processes</h3>
+            <div id="completed-processes" class="process-queue"></div>
+            <div id="detailed-metrics-table-container">
+                </div>
+        </section>
+    </main>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/process.js"></script>
+    <script src="assets/js/queue.js"></script>
+    <script src="assets/js/algorithms/fcfs.js"></script>
+    <script src="assets/js/algorithms/sjn.js"></script>
+    <script src="assets/js/algorithms/srtf.js"></script>
+    <script src="assets/js/algorithms/roundRobin.js"></script>
+    <script src="assets/js/scheduler.js"></script>
+    <script src="assets/js/visualizer.js"></script>
+    <script src="assets/js/metrics.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
